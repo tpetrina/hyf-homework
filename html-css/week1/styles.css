@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: lightslategray;
+    font-family: "Times New Romanm", Times, serif;    
+}
+
+.resume{
+    width: 850px;
+    margin: 30px auto;
+    display: flex;    
+}
+
+.resume ul{
+    list-style: none;
+}
+
+.contact-info{
+border-bottom-style: dotted;
+margin-bottom: 20px;
+}
+
+.contact-info ul li{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+}
+
+.contact-info .content{    
+    padding-left: 7px;    
+}
+
+.email-info a{ 
+    text-decoration: none;  
+}
+
+.profile{
+    text-align: center;
+    padding-top: 10px;
+    color: blue;
+    font-weight: bolder;
+    border-bottom: dotted;
+    margin-bottom: 20px ;
+    border-color:black;
+}
+
+.profile-photo{
+    border-radius: 40px;
+}
+
+.resume-left-side{
+    width: 240px;
+    background-color:pink;
+    padding: 15px;
+}
+
+.name{
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-weight: bolder;
+}
+
+.resume-right-side{
+    width: 610px;
+    padding: 30px;
+    background-color: rgb(230, 239, 245);  
+}
+
+.skill-list{
+    display: grid;
+    float: left;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:auto ;
+    grid-row-gap: 35px;
+    grid-column-gap: 35px;
+    margin-top: 30px;
+    padding-left: 35px;
+    border-bottom-style: dotted;
+    margin-bottom: 20px;
+    padding-bottom: 30px;  
+}
+
+.language-name{
+    float: left;
+    width: 20%;
+    
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.languages-info .progress-bar{
+    width: 50%;
+    height: 10px;
+    background-color: gray;
+    position: relative;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    float: right;
+    margin: 30px;   
+}
+
+.progress-bar > span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: rgb(43,194,83);
+    position: absolute;
+    justify-content: space-between;
+}
+
+.summary-details{
+    margin-top: 30px;
+    border-bottom: solid;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.education-background .title, .work-experience-background .title{
+    padding-top: 20px;      
+}
+
+.education-background .time-info, .work-experience-background .time-info{
+    width: 150px;
+    display: flex;
+    float: left;
+    font-weight: bold;
+    margin-right: 70px;
+    margin-left: 30px;
+}
+
+.education-background .education-details, .work-experience-background .work.details{
+    position: relative;
+    float: right;   
+}
+
+.education-background ul li, .work-experience-background ul li{
+    margin-bottom: 50px;
+    margin-top: 50px;
+    display: flex;
+}
+
+.education-background{
+    border-bottom: solid;
+}
+
+footer{
+    display: flex;
+    border-top: solid;
+    padding-top: 30px;
+}
+
+.column{
+    float: left;
+    width: 50%;   
+}
+
+.column a:link{
+    color:black;
+}
+
+.column a:visited{
+    color: green;
+}
+
+.column a:hover{
+    color: palevioletred;
+}
+
+.column a:active{
+    color: yellow;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer ul li{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+}
+
+
