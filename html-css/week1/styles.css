@@ -11,7 +11,11 @@ body{
 .resume{
     width: 850px;
     margin: 30px auto;
-    display: flex;    
+    display: flex;  
+}
+.resume a{
+    text-decoration: none;
+    color: black;
 }
 
 .resume ul{
@@ -21,20 +25,17 @@ body{
 .contact-info{
 border-bottom-style: dotted;
 margin-bottom: 20px;
+
 }
 
 .contact-info ul li{
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 25px;
+    margin-top: 25px;
     display: flex;
+    text-decoration: none;
 }
-
-.contact-info .content{    
-    padding-left: 7px;    
-}
-
-.email-info a{ 
-    text-decoration: none;  
+.contact-info i{
+    margin-right: 15px;
 }
 
 .profile{
@@ -84,33 +85,26 @@ margin-bottom: 20px;
     padding-bottom: 30px;  
 }
 
-.language-name{
-    float: left;
-    width: 20%;
-    
-    margin-top: 20px;
-    margin-bottom: 30px;
+.language-name{  
+    margin-top: 30px;
 }
 
 .languages-info .progress-bar{
-    width: 50%;
+    width: 60%;
     height: 10px;
     background-color: gray;
     position: relative;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    float: right;
-    margin: 30px;   
+    left: 70px;
+    bottom: 12px; 
+    border-radius: 8px;     
 }
 
 .progress-bar > span {
     display: block;
     height: 100%;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-radius: 8px;
     background-color: rgb(43,194,83);
     position: absolute;
-    justify-content: space-between;
 }
 
 .summary-details{
@@ -118,39 +112,33 @@ margin-bottom: 20px;
     border-bottom: solid;
     padding-bottom: 20px;
     font-size: 18px;
+    text-align: justify;
+    padding-right: 10px;
+    text-indent: 1em;
+    line-height: 25px;
 }
 
-.education-background .title, .work-experience-background .title{
-    padding-top: 20px;      
+.education-background, .work-experience-background{
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-bottom: solid;     
+}
+
+.education-background .education-details, .work-experience-background .work-details{
+    position: relative;
+    left: 230px;
+    bottom: 25px;
+    line-height: 25px; 
 }
 
 .education-background .time-info, .work-experience-background .time-info{
-    width: 150px;
-    display: flex;
-    float: left;
-    font-weight: bold;
-    margin-right: 70px;
-    margin-left: 30px;
-}
-
-.education-background .education-details, .work-experience-background .work.details{
-    position: relative;
-    float: right;   
-}
-
-.education-background ul li, .work-experience-background ul li{
-    margin-bottom: 50px;
-    margin-top: 50px;
-    display: flex;
-}
-
-.education-background{
-    border-bottom: solid;
+    font-weight: bolder;
+    padding-left: 40px;
+    padding-top: 50px;
 }
 
 footer{
     display: flex;
-    border-top: solid;
     padding-top: 30px;
 }
 
@@ -175,14 +163,8 @@ footer{
     color: yellow;
 }
 
-footer a {
-    text-decoration: none;
-}
-
 footer ul li{
     margin-bottom: 20px;
     margin-top: 20px;
     display: flex;
 }
-
-
