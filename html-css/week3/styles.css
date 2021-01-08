@@ -1,0 +1,258 @@
+*{
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+.form-area{
+    width: 80%;
+    background-color: rgb(241, 239, 239);
+    padding: 2%;
+    margin: 4%;
+    position: relative;
+    border-radius: 8px;
+}
+
+body{
+    
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul{
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+.steps{
+    display: inline-block;
+    font-weight: bold;
+}
+.steps a{
+    text-decoration: none;
+
+}
+
+.steps a:after {
+    display: inline-block;
+    content: '>';
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0 6px;
+}
+
+
+
+.logo{
+    width: 70px;
+    height: 70px;
+    
+}
+
+.logo img{
+    width: 100%;
+    background-image: none;
+    
+}
+
+.sign-up-info{
+    width: 70%;
+}
+
+.customer-info label{
+    width: 20%;
+    text-align: right;
+    margin-top: 3%;
+}
+
+.customer-info{
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+.progress-bar{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 25px;
+    border: solid #ccc 1px;
+    border-radius: 30px;
+    margin-bottom: 5%;
+    background-color: white;
+    
+    
+}
+
+.progress-bar > span{
+    display: block;
+    height: 100%;
+    border-radius: 20px;
+    background-color: green;
+    
+}
+
+.bar-1 > span{
+    animation: bar1 4s ;
+}
+
+.bar-2 > span{
+    animation: bar2 4s ;
+}
+
+.bar-3 > span{
+    animation: bar3 4s ;
+}
+
+
+@keyframes bar1{
+  0% {
+    width: 0;
+  }
+  
+  100% {
+    width: 33%;
+  }
+}
+
+@keyframes bar2{
+    0% {
+      width: 33%;
+    }
+    
+    100% {
+      width: 66%;
+    }
+}
+
+@keyframes bar3{
+    0% {
+      width: 66%;
+    }
+    
+    100% {
+      width: 100%;
+    }
+}
+
+.Profile-description{
+    width: 100%;
+    
+    display: flex;
+    padding-right: 4%;
+    margin: 3%;
+    margin-bottom: 5%;
+}
+
+.Profile-description > label{
+    width: 40%;
+    
+}
+
+.newsletter, .offers{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.submit-button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-top: 15%;
+    cursor: pointer;
+
+}
+
+.submit-button:hover{
+    background-color: darkgreen;
+}
+
+label{
+    padding: 12px 12px 12px 0px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: medium;
+}
+
+p{
+    font-size: small;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 110px 110px 110px 120px;
+    row-gap: 20%;
+    justify-content:space-evenly;
+    padding-top: 30px;
+
+    
+}
+.grid-container img{
+    width: 75%;
+    max-height: 100px;
+    
+    
+    
+}
+
+input, select, textarea {
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 6px; 
+}
+
+.final-page image{
+    justify-content: center;
+    text-align: center;
+}
+@media screen and (max-width: 768px){
+    .form-area{
+        width: 88%;
+        font-size: small;
+
+    }
+    
+    h1{
+        font-size:x-large;
+    }
+    input[type=text], select, textarea {
+        width: 100%;   
+    } 
+
+    .Profile-description{
+        flex-direction: column;
+    }
+
+    .Profile-description > label{
+        width: 100%;
+        
+    }
+    .customer-info label{
+        width: 100%;
+        text-align: left;
+    
+    }
+
+    .customer-info input{
+        width: 100%;
+    }
+
+    .grid-container{
+        grid-template-columns: 120px 120px;
+        row-gap: 2%;
+    }
+    .newsletter, .offers{
+        flex-direction: column;
+    }
+
+
+
+}
