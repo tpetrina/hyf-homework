@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -41,7 +42,7 @@
                     <input type="text" id="Last-name" name="Last-name" required><br>
                     <label for="Country-list">Country*</label>
                     <select name="Country-list" id="Country-list" required>
-                        <option value="0" label="Select a country … " selected="selected">Select a country …</option>
+                        <option value="" label="Select a country … " selected="selected">Select a country …</option>
                         <option value="DK">Denmark</option>
                         <option value="SE">Sweden</option>
                         <option value="FI">Finland</option>
@@ -53,8 +54,8 @@
                     <input type="text" id="post-code" name="post-code" minlength="4" maxlength="4" required>
                 </div>
                 <div class="Profile-description">
-                    <label for="description"><h3> Profile description</h3>
-                        <p>Please provide a short description of yourself to be displayed on our social community pages.</p></label>
+                    <label for="description">Profile description <br>
+                        <br> Please provide a short description of yourself to be displayed on our social community pages.</label>
                     <textarea rows="3" cols="50" name="comment" maxlength="500" class="description"></textarea>
                 </div>
                 <div class="delivery">
@@ -62,9 +63,8 @@
                     <label><input type="checkbox" checked>Shipping address</label>
                 </div>
                 <a href="index-step2.html">
-                    <button type="submit" class="submit-button">Next step</button>
+                    <button type="submit" class="submit-button">Next step </button>
                 </a>
-                
             </form>
         </div>
     </body>
