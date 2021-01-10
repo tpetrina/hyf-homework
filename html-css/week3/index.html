@@ -58,9 +58,27 @@
                         <br> Please provide a short description of yourself to be displayed on our social community pages.</label>
                     <textarea rows="3" cols="50" name="comment" maxlength="500" class="description"></textarea>
                 </div>
-                <div class="delivery">
-                    <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
-                    <label><input type="checkbox" checked>Shipping address</label>
+                <input type="checkbox" name="Shipping" id="signup_shipping" >
+                <label for="signup_shipping" class="shipping-lable">
+                    <p>Use the same address for billing and shipping? check the box below to fill out a separate shipping address.</p>
+                    Shipping address</label>
+                <div class="shipping-box customer-info">
+                    <label for="First-name">First name*</label>
+                    <input type="text" id="First-name" name="First-name" required>
+                    <label for="Last-name">Last name*</label>
+                    <input type="text" id="Last-name" name="Last-name" required><br>
+                    <label for="Country-list">Country*</label>
+                    <select name="Country-list" id="Country-list" required>
+                        <option value="" label="Select a country … " selected="selected">Select a country …</option>
+                        <option value="DK">Denmark</option>
+                        <option value="SE">Sweden</option>
+                        <option value="FI">Finland</option>
+                        <option value="NO">Norway</option>
+                    </select><br>
+                    <label for="address">Street address*</label>
+                    <input type="text" id="address" name="address" required>
+                    <label for="post-code">Post code*</label>
+                    <input type="text" id="post-code" name="post-code" minlength="4" maxlength="4" required>
                 </div>
                 <a href="index-step2.html">
                     <button type="submit" class="submit-button">Next step </button>

@@ -149,6 +149,18 @@ nav ul{
     justify-content: space-evenly;
 }
 
+.shipping-box{
+    display: none;
+}
+
+input[type=checkbox]:checked ~ .shipping-box{
+    display: inline;
+}
+
+.shipping-lable{
+    width: 90%;
+}
+
 .submit-button{
     background-color: #4CAF50;
     color: white;
