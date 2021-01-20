@@ -5,10 +5,9 @@
   3. Housey pricey (A house price estimator)
 */
 
-
 // 3. Housey pricey (A house price estimator)
 
-let myFriendsHouses = [
+const myFriendsHouses = [
 
     {
         friendName:"Peter",
@@ -18,7 +17,6 @@ let myFriendsHouses = [
         gardenSizeInM2:100,
         price:2500000
     },
-
     {
         friendName:"Julia",
         houseWidth:5,
@@ -29,8 +27,7 @@ let myFriendsHouses = [
     }
 ];
 
-
-for(let i = 0; i < 2; i++){
+for(let i = 0; i < myFriendsHouses.length; i++){
     let volumeInMeters = myFriendsHouses[i].houseHight * myFriendsHouses[i].houseDepth * myFriendsHouses[i].houseWidth;
     let housePrice = volumeInMeters * 2.5 * 1000 + myFriendsHouses[i].gardenSizeInM2 * 300;
     console.log("Actual price: " + housePrice);
@@ -43,4 +40,3 @@ for(let i = 0; i < 2; i++){
         console.log(myFriendsHouses[i].friendName + ", You paide more than the actual price.");
     }
 }
-
