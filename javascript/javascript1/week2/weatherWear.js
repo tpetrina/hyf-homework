@@ -7,9 +7,9 @@
 function userWear(temperature) {
     if (temperature >= 25) {
         return 'shorts and a t-shirt';
-    } else if (temperature >= 15 && temperature < 25) {
+    } else if (temperature >= 15) {
         return 'Sweater'
-    } else if (temperature >= 5 && temperature < 15) {
+    } else if (temperature >= 5) {
         return 'Jacket'
     } else {
         return 'Jacket, Hat and Gloves'
