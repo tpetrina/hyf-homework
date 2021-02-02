@@ -17,12 +17,10 @@ const names = [
 ];
 const nameToRemove = "Ahmad";
 
-// Write some code here
 function nameRemoval(list, name) {
     const nameIndex = list.indexOf(name);
     list.splice(nameIndex, 1);
 };
 
-// Code done
 nameRemoval(names, nameToRemove);
 console.log(names);
