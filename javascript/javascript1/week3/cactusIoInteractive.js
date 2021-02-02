@@ -8,15 +8,14 @@
 // Adding an activity
 
 const activities = [];
-
+var today = new Date().toLocaleDateString("en-UE");
 function addActivity(date, activity, duration) {
     activities.push({ date, activity, duration });
 };
 
-addActivity("23/7-18", "Youtube", 30);
-addActivity("23/7-18", "Instagram", 60);
-addActivity("25/7-18", "Playing games", 50);
-//addActivity("25/7-18", "Facebook", 50);// I added this line to check if time limit works well.
+addActivity(today, "Youtube", 30);
+addActivity(today, "Instagram", 60);
+addActivity(today, "Playing games", 50);
 console.log(activities);
 
 // Show my status
@@ -36,4 +35,17 @@ function showStatus(activityArray, limitTime = 150) {
 };
 console.log(showStatus(activities));
 
+function getMaximumDurationActivity() {
+    let maxDuration = 0;
+    let maxActivityName = "";
+    for (let i = 0; i < activities.length; i++) {
+        if (activities[i].duration > maxDuration) {
+            maxDuration = activities[i].duration;
+            maxActivityName = activities[i].activity;
+        }
 
+    }
+    return `You have spent most of your time(${maxDuration} min) on ${maxActivityName}.`;
+};
+
+console.log(getMaximumDurationActivity());
