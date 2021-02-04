@@ -27,7 +27,8 @@ const seriesDurations = [
     },
 ];
 
-const lifeYearsInMinutes = 80 * 525600;
+const minutesInYear = 525600;
+const lifeYearsInMinutes = 80 * minutesInYear;
 function logOutSeriesText() {
     let totalDuration = 0;
 
