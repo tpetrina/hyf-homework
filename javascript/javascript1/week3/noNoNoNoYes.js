@@ -9,22 +9,13 @@
 const notes = [];
 
 function saveNote(content, id) {
-    if (duplicateCheck(id)) {
+    if (notes.find(Element => Element.id === id)) {
         console.error(`Note with id:${id} is already exist!Please change the id to ${notes.length + 1} and save your note again`);
     } else if (!id) {
         console.error(`There is no id for your note.Please select id:${notes.length + 1} and save your note again.`);
     } else {
         notes.push({ content, id });
     };
-};
-
-function duplicateCheck(id) {
-    for (let i = 0; i < notes.length; i++) {
-        if (notes[i].id === id) {
-            return true;
-        }
-    }
-    return false;
 };
 
 saveNote("Pick up groceries", 1);
