@@ -26,6 +26,10 @@ function showStatus(activityArray, limitTime = 100) {
     let totalDuration = 0;
     let todayDuration = 0;
     let todayActivityNumbers = 0;
+    if (!activityArray || !activityArray.length) {
+        return "Add some activities before calling showStatus";
+    }
+
     for (let i = 0; i < activityArray.length; i++) {
         totalDuration += activityArray[i].duration;
         if (activityArray[i].date === today) {
@@ -34,16 +38,17 @@ function showStatus(activityArray, limitTime = 100) {
         }
     }
 
-    if (!activityArray || !activityArray.length) {
-        console.log("Add some activities before calling showStatus");
-    } else if (todayDuration > limitTime) {
-        console.log("You have reached your limit, no more smartphoning for you!");
+    if (todayDuration > limitTime) {
+        return "You have reached your limit, no more smartphoning for you!";
     } else {
-        console.log(`You have added ${todayActivityNumbers} activities today. They amount to ${todayDuration} min. of usage`);
-        console.log(`You have added ${activityArray.length} activities in total. They amount to ${totalDuration} min. of usage`);
+        return `You have added ${todayActivityNumbers} activities today. They amount to ${todayDuration} min. of usage`;
     }
 };
-showStatus(activities);
+
+console.log(showStatus());
+console.log(showStatus(activities));
+console.log(showStatus(activities, 60));
+
 
 function getMaximumDurationActivity() {
     let maxDuration = 0;
