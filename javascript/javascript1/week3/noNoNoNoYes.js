@@ -56,3 +56,39 @@ logOutNotesFormatted();
 Also to prevent saving notes without ID.
 I also implemented a code to show the next available id to the user in case of id duplication and id missing.
 */
+
+
+/*
+ down here there is two ways of defining a function in case of guest forget number of note and 
+ want to finde it by searching one word from the note.
+  It was a teamwork with Islam 
+ */
+function getWord(word) {
+    for (let i = 0; i < notes.length; i++) {
+        if (notes[i].content.indexOf(word) != - 1) {
+            console.log(`You are looking for id:${notes[i].id} ${notes[i].content}`);
+        };
+    }
+    console.log(`You do not have any task including ${word}`);
+};
+getWord("food");
+getWord("Washing");
+
+function getWord(word) {
+    let isIncluded = false;
+
+    for (let i = 0; i < notes.length; i++) {
+        let str = notes[i].content.split(" ");
+        if (str.includes(word)) {
+            console.log(`You are looking for id:${notes[i].id} ${notes[i].content}`);
+            isIncluded = true;
+        }
+    }
+
+    if (isIncluded === false) {
+        console.log(`You do not have any task including ${word}`);
+    }
+}
+
+getWord("food");
+getWord("Washing");
