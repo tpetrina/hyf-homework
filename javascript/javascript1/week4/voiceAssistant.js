@@ -11,7 +11,7 @@ let toDo = [];
 function getReply(command) {
 
     if (typeof command !== "string") {
-        return "Please retype your Question";
+        return "Your question is not a string, please enter a question that is a string.";
     }
     let str = command.split(" ");
     if (command.includes("Hello my name is ")) {
