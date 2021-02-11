@@ -13,7 +13,7 @@ function getReply(command) {
     if (typeof command !== "string") {
         return "Your question is not a string, please enter a question that is a string.";
     }
-    let str = command.split(" ");
+    let stringPieces = command.split(" ");
     if (command.includes("Hello my name is ")) {
 
         if (userName === str[str.length - 1]) {
