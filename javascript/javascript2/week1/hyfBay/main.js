@@ -25,8 +25,8 @@ function renderProducts(products) {
         productsUl.appendChild(productLi);
     });
 
-    let Body = document.querySelector("body");
-    Body.appendChild(productsUl);
+    let body = document.querySelector("body");
+    body.appendChild(productsUl);
 }
 
 renderProducts(products); // This should create the ul and the li's with the individual products details
