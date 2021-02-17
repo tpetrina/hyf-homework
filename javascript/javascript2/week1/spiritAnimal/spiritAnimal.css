@@ -1,0 +1,41 @@
+body {
+  background: url("images/background1.jpg") no-repeat fixed center;
+  background-size: cover;
+  font-family: sans-serif;
+  color: white;
+  padding-left: 15%;
+  padding-right: 10%;
+  padding-top: 5%;
+}
+
+#form-area {
+  position: relative;
+  float: right;
+  width: 55%;
+  box-shadow: 0 0 10px white;
+  text-align: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  color: black;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+#result-button {
+  background-color: rgb(28, 28, 61);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5%;
+  box-shadow: 0 0 10px white;
+}
+
+#result-button:hover {
+  background-color: rgb(62, 62, 110);
+}
+
+#User-name {
+  border-radius: 4px;
+}
