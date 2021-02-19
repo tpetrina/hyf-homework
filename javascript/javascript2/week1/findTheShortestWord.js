@@ -10,22 +10,10 @@
 
 const danishWords = ["bil", "plante", "kaffe", "bog", "ø", "planetarium"];
 
-function wordFinder(list) {
-    let shortestWord = list[0];
+const reducer = (shortestWord, currentWord) => currentWord.length < shortestWord.length || shortestWord.length === 0 ? currentWord : shortestWord;
 
-    list.forEach(element => {
-        if (shortestWord.length > element.length) {
-            shortestWord = element;
-        }
+console.log(danishWords.reduce(reducer, ""));
 
-    });
-
-    return {
-        shortestWord,
-        "length": shortestWord.length,
-    };
-}
-console.log(wordFinder(danishWords));
 
 //Find and count the Danish letters
 
@@ -41,6 +29,12 @@ function danishLetterFinder(sentence) {
         æ: countæ,
         ø: countø
     }
+
+    for (const key in result) {
+        if (result[key] === 0) {
+            delete result[key];
+        }
+    }
     console.log(result);
 
 };
@@ -49,6 +43,3 @@ danishLetterFinder(danishString);
 
 const danishString2 = "Blå grød med røde bær";
 danishLetterFinder(danishString2);
-
-
-
