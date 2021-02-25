@@ -11,21 +11,36 @@ function renderProducts(products) {
         let header = document.createElement("h1");
         let productPrice = document.createElement("p");
         let productRating = document.createElement("p");
+        let basketButton = document.createElement("button");
 
         header.innerHTML = product.name;
         productPrice.innerHTML = `Price : ${product.price}`;
         productRating.innerHTML = `Rating : ${product.rating}`;
+        basketButton.innerHTML = "Add to basket";
 
         productLi.appendChild(header);
         productLi.appendChild(productPrice);
         productLi.appendChild(productRating);
+        productLi.appendChild(basketButton);
 
         productsUl.appendChild(productLi);
-    });
 
-    let productsDiv = document.getElementById("products-list");
-    productsDiv.innerHTML = "";
-    productsDiv.appendChild(productsUl);
+        //add to cart
+        basketButton.addEventListener("click", function () {
+            const basket = document.querySelector(".Shopping-basket > ul");
+            const basketLi = document.createElement("li");
+            basketLi.innerHTML = `
+                  <div>${product.name}</div>
+                  <div id:"product-price">Price : ${product.price}</div>
+              `;
+
+            basket.appendChild(basketLi);
+        });
+
+        let productsDiv = document.getElementById("products-list");
+        productsDiv.innerHTML = "";
+        productsDiv.appendChild(productsUl);
+    })
 }
 
 let sortedProducts = [];
