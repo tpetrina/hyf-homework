@@ -31,7 +31,9 @@ console.log(ratingTag);
 *the movies rated higher than 6. 
 *Now map the movies array to only the rating of the movies.*/
 
-const moviesRating = movies.filter(movie => movie.rating > 6).map(movie => `Rating : ${movie.rating}`);
+const moviesRating = movies
+    .filter(movie => movie.rating > 6)
+    .map(movie => `Rating : ${movie.rating}`);
 console.log(moviesRating);
 
 // 6.Count the total number of movies containing the specific words in their title.
