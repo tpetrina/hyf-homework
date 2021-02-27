@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HyfBay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,800"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+  <div id="form-area">
+    <header>
+      <div id="logo">
+          <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t31.0-8/28061753_1225196654280780_3925293282138839850_o.jpg?_nc_cat=105&ccb=3&_nc_sid=6e5ad9&_nc_ohc=XKp6NEoExzwAX9kCfqm&_nc_ht=scontent-cph2-1.xx&oh=c9c28197d2d9c6acfc5a5b9cb56907d8&oe=605D4ADE" alt="image of Supermarket">
+      </div>
+    </header>
+    <main>
+      <h1>Welcome to your online Market.</h1>
+      <div class="customer-search">
+        <label for="product-name">What are you looking for?</label>
+        <input type="text" id="product-name" name="product-name">
+        <label for="Max-price">Maximum Price</label>
+        <input type="number" id="Max-price" name="Max-price">
+        <label>How would you like to sort the list?</label>
+        <select id="sort-options">
+          <option value="">Select sorting option</option>
+          <option value="popular">Most popular</option>
+          <option value="cheap">Price (Ascending)</option>
+          <option value="expensive">Price (Descending)</option>
+        </select>
+      </div>
+      <div id="products-list"></div>
+      <section class="Shopping-basket">
+        <h2>Your Shopping basket</h2>
+        <ul></ul>
+    </section>
+    </main>
+  </div>
+    <script src="hyfBayHelpers.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
