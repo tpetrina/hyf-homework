@@ -1,0 +1,73 @@
+body {
+  background: url("Image/love-is-playing-game-wallpaper.jpg") no-repeat fixed
+    center;
+  background-size: cover;
+  font-family: sans-serif;
+  color: white;
+  justify-content: center;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+#game-container {
+  margin-right: 5%;
+  float: right;
+  width: 45%;
+  box-shadow: 0 0 10px white;
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 3%;
+}
+
+.start-game-button {
+  background-color: #142a35;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+.play-board {
+  display: flex;
+  margin-top: 10%;
+  height: 200px;
+}
+
+.player {
+  border: solid white;
+  border-bottom: 4px;
+  width: 55%;
+  text-align: center;
+}
+
+.player p {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.playerOne {
+  border-left: none;
+}
+
+.playerTwo {
+  border-left: 5px;
+  border-right: none;
+}
+
+canvas {
+  display: flex;
+  position: absolute;
+  width: 20%;
+  height: fit-content;
+}
+
+header {
+  font-family: "Rouge Script", cursive;
+  font-size: large;
+  margin: 0 0 50px;
+  text-align: center;
+  text-shadow: 1px 1px 2px #082b34;
+}
