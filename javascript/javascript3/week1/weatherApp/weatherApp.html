@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weatherApp.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous"/>
+    <title>JS3 Week1 Weather App</title>
+</head>
+
+<body>
+    <div>
+        <header>
+            <h1>Wheather Info</h1>
+        </header>
+        <section class="search-box">
+            <input type="text" id="city-name" name="city-name" placeholder="City Name">
+        </section>
+        <button id="searchButton">How is the weather?</button>
+        <button id="Log-location">your current location Weather</button>
+    </div>
+
+    <div id="weather-data"> 
+        <main>
+            <section id="weather-info">
+                <h2 id="location"></h2>
+                <div id="temp">
+                    <i class="fas fa-thermometer-three-quarters fa-2x"></i>
+                    <h3 id="temperature"></h3>
+                </div>
+                <img id="weather-icon">
+            </section>
+            <section class="weather-table">
+                <ul class="weather-titles">
+                    <li><i class="fas fa-wind fa-2x"></i></li>
+                    <li><i class="fas fa-cloud fa-2x"></i></li>
+                    <li><i class="fas fa-sun fa-2x"></i></li>
+                    <li><i class="far fa-sun fa-2x"></i></i></li>
+                </ul>
+                <ul class="weather-details">
+                    <b><li id="wind-speed"></li></b>
+                    <b><li id="clowdy"></li></b>
+                    <b><li id="sunrise"></li></b>
+                   <b><li id="sunset"></li></b>
+                </ul>  
+            </section>
+            <div id="map"></div>
+        </main>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiC81jAhvKunj8GGURnFCIdFIuyLtaeDk"></script>
+    <script src="weatherApp.js"></script>
+    
+</body>
+</html>
