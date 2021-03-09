@@ -13,20 +13,21 @@ const weatherIcon = document.querySelector("img");
 
 
 function weatherInfoByCityName(cityName) {
-    document.getElementById("weather-data").style.visibility = "visible";
-    fetch("https://api.openweathermap.org/data/2.5/weather?q=" +
-        cityName +
-        "&units=metric&appid=" +
-        apiKey
-    )
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`)
         .then(response => {
             if (response.ok) {
+                document.getElementById("weather-data").style.visibility = "visible";
                 return response.json();
             } else {
                 alert("Please retype the city name!");
+                return null;
             }
         })
         .then(data => {
+            if (!data) {
+                return;
+            }
             console.log(data);
             localStorage.clear();
             localStorage.setItem("city", JSON.stringify(data));
@@ -36,15 +37,19 @@ function weatherInfoByCityName(cityName) {
 
 function weatherInfoByCoordinates(lat, lon) {
     document.getElementById("weather-data").style.visibility = "visible";
-    fetch("https://api.openweathermap.org/data/2.5/weather?lat=" +
-        lat +
-        "&lon=" +
-        lon +
-        "&units=metric&appid=" +
-        apiKey
-    )
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`)
+
+        /*fetch("https://api.openweathermap.org/data/2.5/weather?lat=" +
+            lat +
+            "&lon=" +
+            lon +
+            "&units=metric&appid=" +
+            apiKey
+        )*/
         .then(response => response.json())
         .then(coosdinatesData => {
+            console.log(coosdinatesData);
             localStorage.clear();
             localStorage.setItem("city", JSON.stringify(coosdinatesData));
             render(coosdinatesData);
@@ -63,7 +68,7 @@ function render(weatherData) {
 
     // Weather icon
     const iconCode = weatherData.weather[0].icon;
-    weatherIcon.src = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+    weatherIcon.src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
     // Wind speed
     document.getElementById("wind-speed").innerHTML = `${Math.floor(weatherData.wind.speed)} m/s`;
