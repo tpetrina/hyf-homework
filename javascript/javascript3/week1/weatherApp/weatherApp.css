@@ -111,3 +111,15 @@ input {
   border: ridge 3px;
   border-radius: 3%;
 }
+
+.far {
+  color: rgb(218, 197, 10);
+}
+
+.fa-cloud {
+  color: rgb(79, 132, 231);
+}
+
+.fa-wind {
+  color: rgb(109, 105, 105);
+}
