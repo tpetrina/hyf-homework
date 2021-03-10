@@ -28,7 +28,6 @@ function weatherInfoByCityName(cityName) {
             if (!data) {
                 return;
             }
-            console.log(data);
             localStorage.clear();
             localStorage.setItem("city", JSON.stringify(data));
             render(data);
@@ -39,21 +38,11 @@ function weatherInfoByCoordinates(lat, lon) {
     document.getElementById("weather-data").style.visibility = "visible";
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`)
-
-        /*fetch("https://api.openweathermap.org/data/2.5/weather?lat=" +
-            lat +
-            "&lon=" +
-            lon +
-            "&units=metric&appid=" +
-            apiKey
-        )*/
         .then(response => response.json())
-        .then(coosdinatesData => {
-            console.log(coosdinatesData);
+        .then(coordinatesData => {
             localStorage.clear();
-            localStorage.setItem("city", JSON.stringify(coosdinatesData));
-            render(coosdinatesData);
-
+            localStorage.setItem("city", JSON.stringify(coordinatesData));
+            render(coordinatesData);
         })
 }
 
