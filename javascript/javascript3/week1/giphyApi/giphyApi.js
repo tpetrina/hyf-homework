@@ -33,15 +33,8 @@ searchBtn.addEventListener("click", () => {
 });
 
 function findGiphy(key, name, limit = 27) {
-    fetch(
-        "https://api.giphy.com/v1/gifs/search?q=" +
-        name +
-        "&api_key=" +
-        key +
-        "&limit=" +
-        limit +
-        "&offset=0&rating=G&lang=en"
-    )
+
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${name}&api_key=${key}&limit=${limit}&offset=0&rating=G&lang=en`)
         .then(response => response.json())
         .then(GifImages => {
             console.log(GifImages);
