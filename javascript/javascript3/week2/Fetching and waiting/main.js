@@ -3,11 +3,15 @@
 //1.Do the steps using promises and .then.
 
 function timeOut(delayTime) {
-    return new Promise((resolve) => setTimeout(resolve, delayTime * 1000));
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const planets = fetch("http://swapi.dev/api/planets/");
+            resolve(planets);
+        }, delayTime * 1000);
+    })
 }
 
 timeOut(3)
-    .then(() => fetch("http://swapi.dev/api/planets/"))
     .then(response => response.json())
     .then((data) => {
         const planetNames = data.results.map((planet) => planet.name);
@@ -20,8 +24,7 @@ timeOut(3)
 
 async function fetchDataAsync() {
     try {
-        await timeOut(6);
-        const response = await fetch("http://swapi.dev/api/planets/");
+        const response = await timeOut(6);
         const data = await response.json();
         const planetNames = data.results.map((planet) => planet.name);
         console.log(planetNames);
