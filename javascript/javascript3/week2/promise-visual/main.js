@@ -1,7 +1,6 @@
 const redBox = document.querySelector('ul.marks li:nth-child(1)');
 const blueBox = document.querySelector('ul.marks li:nth-child(2)');
 const greenBox = document.querySelector('ul.marks li:nth-child(3)');
-const boxes = [redBox, blueBox, greenBox];
 
 const targets = {
     red: {
@@ -17,13 +16,6 @@ const targets = {
         y: 20 - parseInt(greenBox.style.top)
     }
 };
-
-function moveElement(boxToMove, newPosition) {
-    return new Promise((resolve) => {
-        boxToMove.style.transform = `translate(${newPosition.x}px, ${newPosition.y}px)`;
-        boxToMove.addEventListener("transitionend", resolve);
-    });
-}
 
 
 async function translateOneByOne() {
