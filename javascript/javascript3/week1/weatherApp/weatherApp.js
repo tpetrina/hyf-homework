@@ -12,7 +12,7 @@ const Temperature = document.querySelector("h3");
 const weatherIcon = document.querySelector("img");
 
 
-function weatherInfoByCityName(cityName) {
+function getWeatherInfoByCityName(cityName) {
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`)
         .then(response => {
@@ -34,7 +34,7 @@ function weatherInfoByCityName(cityName) {
         })
 }
 
-function weatherInfoByCoordinates(lat, lon) {
+function getWeatherInfoByCoordinates(lat, lon) {
     document.getElementById("weather-data").style.visibility = "visible";
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`)
@@ -100,7 +100,7 @@ searchBtnByName.addEventListener("click", () => {
         alert("Please put a city name");
         return;
     }
-    weatherInfoByCityName(cityNameInput.value.trim().toLocaleLowerCase());
+    getWeatherInfoByCityName(cityNameInput.value.trim().toLocaleLowerCase());
 });
 
 logLocationButton.addEventListener("click", () => {
@@ -108,7 +108,7 @@ logLocationButton.addEventListener("click", () => {
         let lat = position.coords.latitude;
         let lng = position.coords.longitude;
 
-        weatherInfoByCoordinates(lat, lng);
+        getWeatherInfoByCoordinates(lat, lng);
         renderGoogleMap(lat, lng);
     });
 });

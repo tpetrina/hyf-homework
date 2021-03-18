@@ -20,16 +20,9 @@ searchBtn.addEventListener("click", () => {
         alert("Please put your search word");
         return;
     }
-    if (gifNumberInput.value) {
 
-        cleanItems(imageGallery);
-        findGiphy(apiKey, searchGifInput.value.trim().toLocaleLowerCase(), gifNumberInput.value);
-
-    } else {
-        cleanItems(imageGallery);
-        findGiphy(apiKey, searchGifInput.value.trim().toLocaleLowerCase());
-    }
-
+    cleanItems(imageGallery);
+    findGiphy(apiKey, searchGifInput.value.trim().toLocaleLowerCase(), gifNumberInput.value);
 });
 
 function findGiphy(key, name, limit = 27) {
