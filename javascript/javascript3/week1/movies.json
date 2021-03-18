@@ -1,0 +1,21 @@
+[
+    {
+    "name" :  "Mortal Kombat ",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "released": 2021,
+    "director": "Simon McQuoid"
+
+    },
+    {
+        "name" :  " Mission: Impossible 7",
+        "genre": ["Action", "Thriller"],
+        "released": 2021,
+        "director": "Christopher McQuarrie"
+    },
+    {
+        "name" :  "Spider-Man: No Way Home",
+        "genre": ["Action", "Sci-Fi"],
+        "released": 2021,
+        "director": "Jon Watts"
+    }
+]
