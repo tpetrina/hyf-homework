@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Shopping cart</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="images/shoppig.png" alt="image of shopping basket">
+    </div>
+    <h1 class="title">Shopping cart</h1>
+    <div class="currency">currency
+      <select name="currency" id="currency">
+        <option value="DKK">DKK</option>
+        <option value="EUR">EUR</option>
+        <option value="AUD">AUD</option>
+        <option value="USD">USD</option>
+      </select>
+    </div>
+</header>
+<main>
+  <label for="product-options">Let's add products to your shopping cart:</label>
+  <select  id="product-options">
+      <option value=""></option>
+  </select>
+  <button id="add-to-cart" class="button">Add to shopping cart</button>
+  
+  <section class="Shopping-basket">
+    <p id="username" class="paragraph"></p>
+    <ul id="ul"></ul>
+    <div id="Total-price">
+      <p id="total" class="paragraph"></p>
+    </div>
+        
+  </section>
+</main>   
+    <script src="main.js"></script>
+  </body>
+</html>
