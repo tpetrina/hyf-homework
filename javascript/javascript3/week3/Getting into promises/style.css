@@ -1,0 +1,13 @@
+ul {
+  list-style-type: none;
+}
+
+.list {
+  white-space: pre-line;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
