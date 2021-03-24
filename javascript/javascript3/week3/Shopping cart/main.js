@@ -72,7 +72,7 @@ class ShoppingCart {
     }
 
     getUser() {
-        fetch("https://jsonplaceholder.typicode.com/users/1")
+        fetch(`https://jsonplaceholder.typicode.com/users/${Math.floor((Math.random() * 10) + 1)}`)
             .then(response => response.json())
             .then((data) => {
                 document.getElementById("username").innerHTML = `Welcome ${data.username}`;
