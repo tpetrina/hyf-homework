@@ -55,32 +55,3 @@ SELECT *
  join task ON task.status_id = status.id
  group by status.name
  order by count(task.status_id) desc;
- 
- 
- 
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
