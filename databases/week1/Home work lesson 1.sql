@@ -9,13 +9,13 @@ FROM task
 WHERE task.due_date is NULL;
 
 -- 3.Find all the tasks that are marked as done
-SELECT task.id, task.title, status.name As status
+SELECT task.id, task.title, status.name As statusName
 FROM task 
 JOIN status ON task.status_id = status.id
 WHERE status.name = "Done";
 
 -- 4.Find all the tasks that are not marked as done
-SELECT task.id, task.title, status.name As status
+SELECT task.id, task.title, status.name As statusName
 FROM task 
 JOIN status ON task.status_id = status.id
 WHERE status.name != "Done";
@@ -26,7 +26,7 @@ FROM task
 order by created desc;
 
 -- 6. Get the single most recently created task
-SELECT *
+SELECT task.title
  FROM task 
  ORDER BY created DESC 
  limit 1;
@@ -50,8 +50,8 @@ SELECT *
  
  
  -- 10. Get the names of all statuses, sorted by the status with most tasks first
- SELECT status.name, count(task.status_id) AS "Number of Tasks"
+ SELECT status.name, count(task.status_id) AS numberOfTasks
  FROM status
  join task ON task.status_id = status.id
  group by status.name
- order by count(task.status_id) desc;
+ order by numberOfTasks desc;
