@@ -1,8 +1,6 @@
 -- Favourite books
 
 CREATE database Favourite_books;
-use Favourite_books;
-
 
 CREATE table users (
 id INT unsigned not null auto_increment primary key,
@@ -47,7 +45,3 @@ PRIMARY KEY(`author_id`, `book_id`),
   CONSTRAINT `fk_author_books_author` FOREIGN KEY (`author_id`) REFERENCES `authors` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_author_books_book` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-
-
-
