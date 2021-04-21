@@ -1,7 +1,5 @@
 -- Additional queries
 
-use MealSharing;
-
 INSERT INTO meal (title, description, location, `when`, max_reservations, price, created_date)
 VALUES ("Pizza", "Try it now!!", "orestad", "2021-04-30", 7, 100, "2021-04-19");
 
