@@ -1,5 +1,7 @@
 -- Additional queries
 
+use MealSharing;
+
 INSERT INTO meal (title, description, location, `when`, max_reservations, price, created_date)
 VALUES ("Pizza", "Try it now!!", "orestad", "2021-04-30", 7, 100, "2021-04-19");
 
@@ -8,6 +10,9 @@ VALUES ("Fish", "Fresh salmon", "Orestad", "2021-05-01", 15, 160, "2021-04-21");
 
 INSERT INTO meal (title, description, location, `when`, max_reservations, price, created_date)
 VALUES ("Breakfast", "sausages, bacon, baked-beans, fried eggs, mushrooms, tomatoes and toast with coffee", "Orestad", "2021-05-04", 15, 200, "2021-04-21");
+
+INSERT INTO meal (title, description, location, `when`, max_reservations, price, created_date)
+VALUES ("Ice cream", "Different tastes", "Orestad", "2021-05-02", 6, 150, "2021-04-23");
 
 
 INSERT INTO reservation (number_of_guests, meal_id, created_date, contact_phonenumber, contact_name, contact_email)
@@ -35,11 +40,12 @@ WHERE meal.price < 190;
 
 
 -- Get meals that still has available reservations
+
 SELECT title, max_reservations, SUM(number_of_guests) AS reservation_guests FROM meal
-JOIN reservation
+LEFT JOIN reservation
 ON meal.id = meal_id
-GROUP BY meal_id
-HAVING max_reservations > SUM(number_of_guests);
+GROUP BY meal.id
+HAVING  max_reservations > reservation_guests or reservation_guests is null;
 
 
 -- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
