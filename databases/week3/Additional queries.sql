@@ -63,7 +63,7 @@ limit 3;
 
 
 -- Get the meals that have good reviews
-SELECT meal.title AS meal, review.stars
+SELECT meal.title , review.stars
 FROM meal
 JOIN review ON meal.id=review.meal_id
 WHERE review.stars >= 4;
