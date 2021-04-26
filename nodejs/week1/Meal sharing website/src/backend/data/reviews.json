@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "numberOfStars": 3,
+    "content": "Best meal ever",
+    "mealId": 1,
+    "createdAt": "2021/04/28 11:30"
+  },
+
+  {
+    "id": 2,
+    "numberOfStars": 5,
+    "content": "Great quality meal",
+    "mealId": 1,
+    "createdAt": "2021/04/28 12:30"
+  },
+
+  {
+    "id": 3,
+    "numberOfStars": 4,
+    "content": "Perfect, I would recomment it to friends.",
+    "mealId": 2,
+    "createdAt": "2021/04/27 14:30"
+  }
+]
