@@ -27,7 +27,6 @@ console.log(`circleTwo circumference is ${circleTwo.getCircumference()}`);
 console.log(`circleTwo area is ${circleTwo.getArea()}`);
 
 // Results from node
-// hfarj@iMac-KQ2J6JF MINGW64 ~/Desktop/hyf-homework/nodejs/week1/Circle calculator (nodejs/week1)
 // $ node ./circle_calculator
 // circleOne diameter is 20
 // circleOne circumference is 62.83185307179586
