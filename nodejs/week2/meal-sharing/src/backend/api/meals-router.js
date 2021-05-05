@@ -30,6 +30,8 @@ router.get("/", (request, response) => {
 
   try {
 
+    let filteredMeals = meals;
+
     if ('maxPrice' in request.query) {
       const maxPrice = parseFloat(request.query.maxPrice);
 
@@ -37,14 +39,12 @@ router.get("/", (request, response) => {
         response.status(400).send(`Maximum price should be an integer`)
         return;
       }
-      const mealsByMaxPrice = meals.filter((meal) => meal.price <= maxPrice);
-      response.send(mealsByMaxPrice);
+      filteredMeals = filteredMeals.filter((meal) => meal.price <= maxPrice);
     }
 
     if ('title' in request.query) {
       const title = request.query.title;
-      const mealByTitle = meals.filter((meal) => meal.title.includes(`${title}`));
-      response.send(mealByTitle);
+      filteredMeals = filteredMeals.filter((meal) => meal.title.includes(`${title}`));
     }
 
     if ('createdAfter' in request.query) {
@@ -54,8 +54,7 @@ router.get("/", (request, response) => {
       if (!createdAfterDate.getDate()) {
         return response.status(400).send('Date must be a valid date')
       }
-      const mealsByDate = meals.filter(meal => new Date(meal.createdAt).getDate() > (createdAfterDate.getDate() + 1));
-      response.send(mealsByDate);
+      filteredMeals = filteredMeals.filter(meal => new Date(meal.createdAt).getDate() > (createdAfterDate.getDate() + 1));
     }
 
     if ('limit' in request.query) {
@@ -64,10 +63,9 @@ router.get("/", (request, response) => {
         response.status(400).send(`Limit should be an integer`)
         return;
       }
-      const getLimitedMeals = meals.slice(0, limit)
-      response.send(getLimitedMeals);
+      filteredMeals = filteredMeals.slice(0, limit);
     }
-    response.json(meals);
+    response.json(filteredMeals);
   } catch (error) {
     throw error;
   }
