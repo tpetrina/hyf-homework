@@ -20,7 +20,7 @@ function Deadline(props) {
     );
 }
 
-function ToDoItems(props) {
+function ToDoItem(props) {
     return (
         <li>
             <h2>{props.todo.number}- {props.todo.title} <Checkbox/> </h2><br />
@@ -36,7 +36,7 @@ function TodoList(props) {
             <h1>Todo List</h1>
             {props.todos.map((todo) => {
                 return (
-                    <ToDoItems key={todo.number} todo={todo} />
+                    <ToDoItem key={todo.number} todo={todo} />
                 )
             })}
         </ul>
