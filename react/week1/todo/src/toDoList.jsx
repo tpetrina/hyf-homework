@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 function Checkbox() {
     return (
@@ -8,33 +9,25 @@ function Checkbox() {
     )
 }
 
-function Deadline(props) {
-    const deadline = new Date(props.date.year, props.date.month - 1, props.date.day);
-    const today = new Date();
-    const status = deadline > today ? "valid" : "expired";
-    return (
-        <div>
-            <p>Deadline date: {props.date.day}/ {props.date.month}/ {props.date.year}</p>
-            <p>Status : {status}</p>
-        </div>
-    );
-}
-
 function ToDoItem(props) {
+    const {todo}=props;
+    const deadline = new Date(todo.deadlineDate.year, todo.deadlineDate.month - 1, todo.deadlineDate.day);
     return (
         <li>
-            <h2>{props.todo.number}- {props.todo.title} <Checkbox/> </h2><br />
-            <div>Description : {props.todo.description}</div><br />
-            <div><Deadline date={props.todo.deadlineDate}></Deadline></div>
+            <h2>{todo.number}- {todo.title} <Checkbox/> </h2>
+            <div>Description : {todo.description}</div>
+            <div>Deadline date : {moment(deadline).format('MM/DD/YYYY')}</div>
+          <div>Status : {deadline > new Date() ? "valid" : "expired"}</div>
         </li>
     );
 }
 
 function TodoList(props) {
+    const {todos}=props;
     return (
         <ul>
             <h1>Todo List</h1>
-            {props.todos.map((todo) => {
+            {todos.map((todo) => {
                 return (
                     <ToDoItem key={todo.number} todo={todo} />
                 )
