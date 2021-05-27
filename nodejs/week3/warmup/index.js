@@ -45,7 +45,7 @@ router.get("/subtract", (request, response) => {
     }
 })
 
-router.get("/divide", (request, response) => {
+router.get("/division", (request, response) => {
     try {
         const result = Object.values(request.query)
             .reduce((accumulator, currentValue) => accumulator.concat(currentValue), [])
