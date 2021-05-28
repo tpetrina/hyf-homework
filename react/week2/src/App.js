@@ -17,20 +17,20 @@ function TodoItem({ id, description, onDelete }) {
   );
 }
 
-function TodoList({ todos }) {
-  const [Todos, setTodos] = useState(todos);
+function TodoList({ todos, setTodos }) {
 
   const addTodo = () => {
+    setTodos((prev)=>{
       const newTodo = {
-        id: Todos.length > 0 ? Todos[Todos.length-1].id + 1 : 1,
+        id: todos.length > 0 ? todos[todos.length-1].id + 1 : 1,
         description: "random text"
       };
-      const newTodosArr = Todos.concat(newTodo);
-      setTodos(newTodosArr);
+      return [...prev, newTodo]
+    })
   };
 
   const onDelete = (id) => {
-      const filteredTodos = Todos.filter((todo) => todo.id !== id);
+      const filteredTodos = todos.filter((todo) => todo.id !== id);
       setTodos(filteredTodos);
   };
 
@@ -38,8 +38,8 @@ function TodoList({ todos }) {
     <div>
       <button onClick={addTodo}>Add todo</button>
       <ul>
-        {Todos.length > 0 ?
-        Todos.map((todo) => (
+        {todos.length > 0 ?
+        todos.map((todo) => (
           <TodoItem
             key={todo.id}
             id={todo.id}
@@ -71,17 +71,7 @@ function Counter() {
   );
 }
 
-function App() {
-  return (
-    <>
-      <h1>Todos list</h1>
-      <Counter></Counter>
-      <TodoList todos={todos}></TodoList>
-    </>
-  );
-}
-
-const todos = [
+const todoItems = [
   {
     id: 1,
     description: "Brush teeth",
@@ -110,5 +100,17 @@ const todos = [
     },
   }
 ];
+
+function App() {
+   const [todos, setTodos] = useState(todoItems);
+   
+  return (
+    <>
+      <h1>Todos list</h1>
+      <Counter></Counter>
+      <TodoList todos={todos} setTodos={setTodos}></TodoList>
+    </>
+  );
+}
 
 export default App;
