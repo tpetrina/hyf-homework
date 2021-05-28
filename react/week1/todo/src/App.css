@@ -1,0 +1,28 @@
+.App {
+  background: url("./todo1.jpg") center no-repeat fixed;
+  background-size: contain;
+  width: 70%;
+  height: fit-content;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 4%;
+  padding: 2%;
+  margin-left: 15%;
+  border-radius: 8px;
+  font-weight: bolder;
+  font-size: large;
+}
+
+h1 {
+  font-family: "Rouge Script", cursive;
+  font-size: 40px;
+  margin: 0 0 50px;
+  text-shadow: 2px 3px 3px #082b34;
+}
+
+h2 {
+  color: rgb(168, 116, 53);
+}
+ul {
+  list-style-type: none;
+  border: 1px solid var(--plum);
+}
