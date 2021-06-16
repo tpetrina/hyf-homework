@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 function TodoItem({ id, description, deadline, todos, onDelete, setInputValue }) {
   const [isChecked, setChecked] = useState(false);
   const [editing, setEditStatus] = useState(false);
-  const [newDescription, setDescription]=useState(description);
+  const [newDescription, setNewDescription]=useState(description);
 
   const check = () => {
     setChecked(!isChecked);
@@ -61,7 +61,7 @@ function TodoItem({ id, description, deadline, todos, onDelete, setInputValue })
       <FormControl
       type="text"
               value={newDescription}
-              onChange={(event)=>setDescription(event.target.value)}
+              onChange={(event)=>setNewDescription(event.target.value)}
             />
       <Button
       variant="info"

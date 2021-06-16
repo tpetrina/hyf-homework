@@ -5,7 +5,7 @@ function Header() {
     return (
         <div >
         <h1>Todos list</h1>
-        <h4><Counter></Counter></h4>
+        <h4><Counter/></h4>
         </div>
     );
 }

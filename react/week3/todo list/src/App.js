@@ -19,7 +19,7 @@ function App() {
   console.log(todos);
   return (
     <div>
-    <Header></Header>
+    <Header/>
     <Container className="App" style={{  boxshadow: "0 0 10px black"}}>
       <TodoList todos={todos} setTodos={setTodos}></TodoList>
     </Container>
