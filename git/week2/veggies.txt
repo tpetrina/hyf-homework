@@ -3,3 +3,5 @@ carrot
 corn
 broccoli
 mushroom
+eggplant
+green pepper
